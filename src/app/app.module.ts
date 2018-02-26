@@ -14,13 +14,16 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { NewticketsComponent } from './newtickets/newtickets.component';
 import { EmployeService } from '../service/Employee.service';
 import { AddEmployeComponent } from './employe/add-employe/add-employe.component';
+import { ListEmployeComponent } from './employe/list-employe/list-employe.component';
+import { DétailsEmployeComponent } from './employe/d\u00E9tails-employe/d\u00E9tails-employe.component';
 
 
 const appRoutes : Routes = [
   {path: "login",component:LoginComponent  },
   {path: "tickets",component:TicketsComponent  },
   {path: "new-tickets",component: NewticketsComponent  },
-  {path: "employes",component:AddEmployeComponent },
+  {path: "AddEmployes",component:AddEmployeComponent },
+  {path: "ListEmployes",component:ListEmployeComponent },
   {path: "register",component:RegistrationComponent },
 
   {path: "",redirectTo:"login",pathMatch:"full" }
@@ -37,6 +40,8 @@ const appRoutes : Routes = [
     TicketsComponent,
     NewticketsComponent,
     AddEmployeComponent,
+    ListEmployeComponent,
+    DétailsEmployeComponent,
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),FormsModule,HttpClientModule

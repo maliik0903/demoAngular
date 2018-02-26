@@ -34,8 +34,5 @@ export class TicketsComponent implements OnInit {
     this.authService.logout();
     this.router.navigateByUrl('/login');
   }
-   
-add1(){
- this.router.navigateByUrl('/employes')
-}
+  
 }
