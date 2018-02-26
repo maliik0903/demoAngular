@@ -1,0 +1,30 @@
+<p>
+    add-employe works!
+  </p>
+
+
+<form [formGroup]="form">
+    <div>
+      <label>name : </label>
+          <div>
+            <div class=""> 
+              <input type="texte" formControlName="name" name="name" class="form-control">  
+    
+            <div *ngIf="form.invalid && form.get('name').touched && form.get('name').errors" >
+            <label *ngIf="form.get('name').errors.required" class="label label-danger" >name required</label>
+            <label *ngIf="form.get('name').errors.minlength" class="label label-danger" >name size must be > 3</label>
+            </div>
+          </div>
+    
+          </div>
+    
+      <label>address</label>
+      <div>
+          <textarea rows="3" name="address" formControlName="address" class="form-control"></textarea>
+    
+      </div>
+    </div>  
+    
+    <button class="btn btn-primary" [disabled]="form.invalid" (click)="add(form.value)">ADD</button>
+    
+    </form>

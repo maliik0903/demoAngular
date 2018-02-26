@@ -1,6 +1,13 @@
 <div class="container">
+    <div class="container">
+        <button  class="btn btn-default" (click)="Onlogout()">login</button>
+        <button  class="btn btn-default" routerLink="/tickets">tickets</button>
+      </div>
   <p></p>
   <button class="btn btn-danger" (click)="NewTask()" *ngIf="authService.isAdmin()">new Tasks</button>
+  <p></p>
+  <p></p>
+  <button class="btn btn-primary" (click)="add1()">ajouter</button>
   <p></p>
   <table class="table table-striped">
     <tr>

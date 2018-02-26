@@ -22,7 +22,7 @@ saveToken(jwt:string){
 }
 getTasks(){
   if (this.jwtToken==null) this.loadToken()
-  return this.http.get(this.host+"/tasks",{headers: new HttpHeaders({'authorization':this.jwtToken})})
+  return this.http.get(this.host+"/tickets",{headers: new HttpHeaders({'authorization':this.jwtToken})})
 }
 
 loadToken(){
@@ -42,6 +42,6 @@ isAdmin(){
 saveTask(task){
   let headers=new HttpHeaders();
   headers.append('authorization',this.jwtToken)
-  return this.http.post(this.host+"/tasks",task,{headers:new HttpHeaders({'authorization':this.jwtToken})})
+  return this.http.post(this.host+"/tickets",task,{headers:new HttpHeaders({'authorization':this.jwtToken})})
 }
 }

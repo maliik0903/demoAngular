@@ -4,20 +4,25 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { TasksComponent } from './tasks/tasks.component';
-import { NewTasksComponent } from './new-tasks/new-tasks.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { Routes,RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule  } from '@angular/common/http';
+
 import { AuthenticationService } from '../service/authentication.service';
+import { TicketsComponent } from './tickets/tickets.component';
+import { NewticketsComponent } from './newtickets/newtickets.component';
+import { EmployeService } from '../service/Employee.service';
+import { AddEmployeComponent } from './employe/add-employe/add-employe.component';
 
 
 const appRoutes : Routes = [
   {path: "login",component:LoginComponent  },
-  {path: "tasks",component:TasksComponent  },
-  {path: "new-tasks",component: NewTasksComponent  },
-  {path: "register",component:RegistrationComponent  },
+  {path: "tickets",component:TicketsComponent  },
+  {path: "new-tickets",component: NewticketsComponent  },
+  {path: "employes",component:AddEmployeComponent },
+  {path: "register",component:RegistrationComponent },
+
   {path: "",redirectTo:"login",pathMatch:"full" }
 
 ]
@@ -27,14 +32,17 @@ const appRoutes : Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    TasksComponent,
-    NewTasksComponent,
-    RegistrationComponent
+    NewticketsComponent,
+    RegistrationComponent,
+    TicketsComponent,
+    NewticketsComponent,
+    AddEmployeComponent,
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),FormsModule,HttpClientModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService,    EmployeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

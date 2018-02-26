@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
           let jwt = Response.headers.get('Authorization');
          // console.log(Response.headers.get('Authorization'));
          this.authService.saveToken(jwt);
-         this.router.navigateByUrl('/tasks')
+         this.router.navigateByUrl('/tickets')
         
       
         },
