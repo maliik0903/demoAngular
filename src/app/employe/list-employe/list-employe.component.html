@@ -18,13 +18,16 @@
     </tr>
 
   </thead>
-  <tbody>
+ <tbody>
     <tr *ngFor="let employe of employes ">
       <td>{{employe.id}}</td>
       <td>{{employe.name}}</td>
-  
+
+
+    
       <button class="btn btn-danger" (click)="delete(employe.id)">supprimer</button>
-      
+      <button  class="btn btn-primary" routerLink="/DetailsEmployes">Détails</button>
+
     </tr>
     
   </tbody>

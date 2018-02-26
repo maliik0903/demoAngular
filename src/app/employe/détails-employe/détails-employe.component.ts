@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { EmployeService } from '../../../service/Employee.service';
 
 @Component({
   selector: 'app-détails-employe',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DétailsEmployeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+     @Input()  
+    id
+    username
+    employe
+      constructor(private EmployeService : EmployeService) { }
+    
+      ngOnInit() {
+      }
+    
+      ngOnChanges() {
+        this.findEmployess(this.username)
+      }
+      findEmployess(username){
+        this.EmployeService.findUserByUsername(username).subscribe(
+    
+                                      (result)=>{
+                                     this.employe = result.json();
+           },
+           error=>{
+             console.log(error)
+           }
+       
+         )
+       }
+      }

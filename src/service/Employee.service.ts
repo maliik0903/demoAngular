@@ -24,7 +24,7 @@ url="http://localhost:8082/employes"
    saveUser(employe):Observable<any>{
      let header = new Headers({"content-Type": "application/json"})
      header.append('authorization',this.jwtToken)
-    return this.http.post(this.url,JSON.stringify(employe),{headers:new HttpHeaders({'authorization':this.jwtToken})});
+    return this.http.post(this.url+"/register",JSON.stringify(employe),{headers:new HttpHeaders({'authorization':this.jwtToken})});
    }
   
 }

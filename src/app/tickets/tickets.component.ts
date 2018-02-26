@@ -27,12 +27,12 @@ export class TicketsComponent implements OnInit {
      
   }
   NewTask(){
-    this.router.navigateByUrl('/newtickets')
+    this.router.navigateByUrl('/new-tickets')
         
   }
   Onlogout(){
     this.authService.logout();
     this.router.navigateByUrl('/login');
   }
-  
+
 }

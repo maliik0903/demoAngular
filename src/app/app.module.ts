@@ -24,6 +24,8 @@ const appRoutes : Routes = [
   {path: "new-tickets",component: NewticketsComponent  },
   {path: "AddEmployes",component:AddEmployeComponent },
   {path: "ListEmployes",component:ListEmployeComponent },
+  {path: "DetailsEmployes",component:DétailsEmployeComponent },
+
   {path: "register",component:RegistrationComponent },
 
   {path: "",redirectTo:"login",pathMatch:"full" }

@@ -16,6 +16,8 @@ export class AddEmployeComponent implements OnInit {
   nameControl :FormControl
   addressControl:FormControl 
   employes: any;
+   submitted = false;
+
 
   constructor(private EmployeService : EmployeService) { }
 

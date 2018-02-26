@@ -25,7 +25,7 @@ export class ListEmployeComponent implements OnInit {
   }
 
   add1(){
-    this.Router.navigateByUrl('/employes')
+    this.Router.navigateByUrl('/AddEmployes')
    }
 delete(id){
  this.EmployeService.delete(id).subscribe(
@@ -37,6 +37,10 @@ delete(id){
     }
 
   )
+}
+ 
+details(username){
+  this.Router.navigateByUrl('/DetailsEmployes')
 }
 
 }

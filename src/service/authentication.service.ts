@@ -34,14 +34,13 @@ logout(){
 }
 isAdmin(){
   for (let r of this.roles){
-    if (r.authority=="ADMIN") return true
+    if (r.authority=="SUPERADMIN") return true
   }
   return false
 }
 
 saveTask(task){
-  let headers=new HttpHeaders();
-  headers.append('authorization',this.jwtToken)
-  return this.http.post(this.host+"/tickets",task,{headers:new HttpHeaders({'authorization':this.jwtToken})})
+
+  return this.http.post(this.host+"/saveTasks",task,{headers:new HttpHeaders({'authorization':this.jwtToken})})
 }
 }
